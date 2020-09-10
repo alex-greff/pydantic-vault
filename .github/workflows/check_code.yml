@@ -16,10 +16,8 @@ jobs:
     - name: Install Poetry
       uses: dschep/install-poetry-action@71da422ac9b75e0716e7c74b0062c887aee1c6a7
       with:
-        version: 1.0.5
-
-    - name: Set Poetry config
-      run: poetry config virtualenvs.path ~/.virtualenvs
+        version: 1.0.10
+        create_virtualenvs: true
 
     - name: Install dependencies
       run: poetry install

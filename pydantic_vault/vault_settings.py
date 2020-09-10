@@ -40,6 +40,8 @@ class VaultBaseSettings(BaseSettings):
             hvac_parameters.update({"token": self.__config__.vault_token})
 
         vault_client = hvac.Client(self.__config__.vault_url, **hvac_parameters)
+        a: str = 2
+        vault_client.auth_kubernetes()
 
         # Get secrets
         for field in self.__fields__.values():
