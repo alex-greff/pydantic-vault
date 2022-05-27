@@ -283,7 +283,7 @@ def vault_config_settings_source(settings: BaseSettings) -> Dict[str, Any]:
                     continue
 
         if field.is_complex() and not isinstance(
-            vault_val, dict
+            vault_val, (dict, list)
         ):  # If it is already a dict we can load it in Pydantic
             try:
                 vault_val = settings.__config__.json_loads(vault_val)  # type: ignore
